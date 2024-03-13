@@ -14,6 +14,7 @@ body{
     position: relative;
     overflow: hidden;
     background: #F9F7F5;
+    margin: auto;
 }
 
 .img-wrap{
@@ -21,13 +22,21 @@ body{
     height: 140px;
     overflow: hidden;
     position: relative;
+    transition: ease-in-out 0.4s;
     
     
+}
+
+.circle-content:hover .img-wrap{
+    height: 180px;
+    transition: ease-in-out 0.4s;
+
 }
 
 .work-img{
     width: 100%;
     height: auto;
+    background-size: cover;
 }
 
 .overly {
@@ -61,18 +70,31 @@ p{
 
 .icon-img{
     position: absolute;
-    bottom: 24px;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-
-}
-
-.circle-content:hover .img-wrap{
-    height: 180px;
+    bottom: -100px;
     transition: ease-in-out 0.6s;
 
 }
+
+.border{
+    width: 282px;
+    height: 282px;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; 
+    border: 3px solid var(--Color-gold, #B59E75);
+    
+}
+
+.circle-content:hover .border{
+    opacity: 1;
+}
+
+
 
 .circle-content:hover p{
     display: none;
@@ -81,15 +103,16 @@ p{
 .circle-content:hover .icon-img{
  opacity: 1;
  transition: ease-in-out 0.6s;
+ bottom: 24px;
 }
 
 .circle-content:hover{
     border-radius: 282px;
-    border: 3px solid var(--Color-gold, #B59E75);
+    /* border: 3px solid var(--Color-gold, #B59E75); */
 }
 
 
-@keyframes dropBounce {
+ @keyframes dropBounce  {
     0% {
       height: 140px;
       transform: translateY(-50%);
@@ -108,17 +131,11 @@ p{
     }
 
     
-}
-  
-.img-wrap {
-    width: 282px;
-    height: 140px;
-    overflow: hidden;
-    transition: ease-in-out .06s; 
-}
+} 
 
-.circle-content:hover .img-wrap {
-    animation: dropBounce 0.6s ease-in-out forwards; 
+
+.circle-content:hover .img-wrap { 
+     animation: dropBounce 0.5s ease-in-out ; /*by removeing this line we can set the animation expected */
 
     
 }
